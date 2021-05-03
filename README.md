@@ -23,6 +23,8 @@
   python train.py
   ```
 
+<br>
+
 # Test with masked lfw test dataset
 - #### Step1
   - Download [lfw](https://pan.baidu.com/s/1tFEX0yjUq3srop378Z1WMA ) pwd : b2ec
@@ -46,11 +48,20 @@
   python test.py
   ```
 
+<br>
+
+# Pretrained weight with Make masked asian celen data
+- #### [DownLoad Link](https://drive.google.com/drive/folders/13Mp6qz9E9L3Z3C9ScKxcOytc2j6cK079)
+
+<br>
+
 # References
 - https://github.com/ronghuaiyang/arcface-pytorch
 
 - https://github.com/aqeelanwar/MaskTheFace
 
-# pretrained model and lfw test dataset
+<br>
+
+# pretrained model and lfw test dataset in (original repository)[https://github.com/ronghuaiyang/arcface-pytorch]
 the pretrained model and the lfw test dataset can be download here. link: https://pan.baidu.com/s/1tFEX0yjUq3srop378Z1WMA pwd: b2ec
 the pretrained model use resnet-18 without se. Please modify the path of the lfw dataset in config.py before you run test.py.
