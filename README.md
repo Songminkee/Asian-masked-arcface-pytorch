@@ -1,5 +1,11 @@
-# arcface-pytorch
-pytorch implement of arcface 
+# Dataset
+- #### Step 1
+  - Download [Asian-Celeb Dataset](https://github.com/deepinsight/insightface/wiki/Dataset-Zoo)
+- #### Step 2
+  - Extract image
+  ```bash
+  python extract_asian_celeb.py --idx_path [train.idx file] --rec_path [train.rec file] --write_path [dst_path]
+  ```
 
 # References
 https://github.com/deepinsight/insightface
