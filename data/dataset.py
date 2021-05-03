@@ -11,14 +11,14 @@ import sys
 
 class Dataset(data.Dataset):
 
-    def __init__(self, root, data_list_file, phase='train', input_shape=(1, 128, 128)):
+    def __init__(self,  data_list_file, phase='train', input_shape=(1, 128, 128)):
         self.phase = phase
         self.input_shape = input_shape
 
         with open(os.path.join(data_list_file), 'r') as fd:
             imgs = fd.readlines()
 
-        imgs = [os.path.join(root, img[:-1]) for img in imgs]
+        #imgs = [os.path.join(root, img[:-1]) for img in imgs]
         self.imgs = np.random.permutation(imgs)
 
         # normalize = T.Normalize(mean=[0.5, 0.5, 0.5],

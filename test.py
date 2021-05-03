@@ -83,7 +83,7 @@ def get_featurs(model, test_list, batch_size=10):
 def load_model(model, model_path):
     model_dict = model.state_dict()
     pretrained_dict = torch.load(model_path)
-    pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
+    pretrained_dict = {k.replace('module.',''): v for k, v in pretrained_dict.items() if k.replace('module.','') in model_dict}
     model_dict.update(pretrained_dict)
     model.load_state_dict(model_dict)
 
@@ -158,9 +158,9 @@ if __name__ == '__main__':
     elif opt.backbone == 'resnet50':
         model = resnet50()
 
-    model = DataParallel(model)
-    # load_model(model, opt.test_model_path)
-    model.load_state_dict(torch.load(opt.test_model_path))
+    #model = DataParallel(model)
+    load_model(model, opt.test_model_path)
+    #model.load_state_dict(torch.load(opt.test_model_path))
     model.to(torch.device("cuda"))
 
     identity_list = get_lfw_list(opt.lfw_test_list)

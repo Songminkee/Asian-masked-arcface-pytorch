@@ -30,14 +30,14 @@ if __name__ == '__main__':
         visualizer = Visualizer()
     device = torch.device("cuda")
 
-    train_dataset = Dataset(opt.train_root, opt.train_list, phase='train', input_shape=opt.input_shape)
+    train_dataset = Dataset(opt.train_list, phase='train', input_shape=opt.input_shape)
     trainloader = data.DataLoader(train_dataset,
                                   batch_size=opt.train_batch_size,
                                   shuffle=True,
                                   num_workers=opt.num_workers)
 
-    identity_list = get_lfw_list(opt.lfw_test_list)
-    img_paths = [os.path.join(opt.lfw_root, each) for each in identity_list]
+    # identity_list = get_lfw_list(opt.lfw_test_list)
+    # img_paths = [os.path.join(opt.lfw_root, each) for each in identity_list]
 
     print('{} train iters per epoch:'.format(len(trainloader)))
 
@@ -52,7 +52,10 @@ if __name__ == '__main__':
         model = resnet34()
     elif opt.backbone == 'resnet50':
         model = resnet50()
-
+    
+    if opt.load_model_path != '':
+        load_model(model, opt.load_model_path)
+    
     if opt.metric == 'add_margin':
         metric_fc = AddMarginProduct(512, opt.num_classes, s=30, m=0.35)
     elif opt.metric == 'arc_margin':
