@@ -51,7 +51,7 @@
 <br>
 
 # Pretrained weight with Make masked asian celen data
-- #### [DownLoad Link](https://drive.google.com/drive/folders/13Mp6qz9E9L3Z3C9ScKxcOytc2j6cK079)
+- #### [DownLoad Link](https://drive.google.com/file/d/1IbZs0uyLwibsjhhf37ZPf96BWwRSFg6N/view?usp=sharing)
 
 <br>
 
