@@ -19,9 +19,9 @@ def make_masked_lfw_pair(args):
 if __name__ == '__main__':
     import argparse
 
-    parser = argparse.ArgumentParser(descriptions="Extract Asian Celeb")
+    parser = argparse.ArgumentParser(description="Make lfw pair")
     parser.add_argument('--lfw_test_pair',type=str, help = 'The path of lfw_test_pair' , default='./lfw_test_pair.txt')
-    parser.add_argument('--maksed_lfw_path',type=str, help = 'The path of masked image path' , default='./dataset/128_masked/')
+    parser.add_argument('--maksed_lfw_path',type=str,  nargs='+', help = 'The path of masked image path' , default=['./dataset/128_masked/'])
     parser.add_argument('--dst_root',type=str, help = 'folder of dst txt file' , default='./dataset')
     args = parser.parse_args()
 
